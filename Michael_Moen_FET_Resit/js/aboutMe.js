@@ -1,3 +1,5 @@
+//about me
+
 let aboutMe = [
     "ABOUT ME",
     "I DELIVER PROJECTS HALF DONE!",

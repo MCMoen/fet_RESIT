@@ -1,3 +1,4 @@
+//contact
 $(function () {
     $("#update-contact").click(function () {
         let email_address = prompt("Input your email adress:")
