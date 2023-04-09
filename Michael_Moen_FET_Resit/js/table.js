@@ -1,13 +1,4 @@
-//Commititing ajrfoidnsa rpo setr
-/*
-function addRow() {
-    let table = document.getElementsByClassName('table')
-    let newRow = document.createElement('tr')
-    let idCell = document.createElement('td')
-    idCell.textContent = "Dumbo"
-    table.appendChild(newRow)
-}
-*/
+//Arrays that contain the information used in the "addBtn"
 id = ["Michael", "Pedro", "Peter", "Barney", "Ted"]
 proj = ["Cookie!", "AlphaOne", "Webslinger", "Playbook", "Anger"]
 desc = ["Create a better version of Cookie Clicker!",
@@ -26,12 +17,11 @@ img = ["https://as2.ftcdn.net/v2/jpg/02/29/55/47/1000_F_229554761_qI7vB5bc6Fr0yR
 
 // Function to add a new row to the table
 function addRow(index, buttonElement) {
-
+    //Disables the button that has been clicked
     buttonElement.disabled = true;
-    // Find the table element by its class name
-    var table = document.getElementsByClassName("table")[0];
 
-    // Create a new row element
+    //Adds new table and populates the rows
+    var table = document.getElementsByClassName("table")[0];
     var newRow = document.createElement("tr");
 
     // Create the cells for the row
@@ -40,46 +30,41 @@ function addRow(index, buttonElement) {
     var descCell = document.createElement("td");
     var imgCell = document.createElement("td");
 
-    // Set the content for the cells (you can customize this based on your requirements)
     if (index >= 0 && index < 5) {
         idCell.textContent = id[index];
         projCell.textContent = proj[index];
         descCell.textContent = desc[index];
         var imgElement = document.createElement("img");
         imgElement.src = img[index];
-        imgElement.width = 100; // set desired width
+        imgElement.width = 100;
         imgElement.height = 100;
         imgCell.appendChild(imgElement);
     } else {
-        // Handle invalid index
         console.error("Invalid index: " + index);
         return;
     }
-    // Append the cells to the row
+
     newRow.appendChild(idCell);
     newRow.appendChild(projCell);
     newRow.appendChild(descCell);
     newRow.appendChild(imgCell);
 
-    // Append the row to the table
     table.appendChild(newRow);
 
+    //Makes the image open in new tab when clicked
     $(imgCell).on('click', function () {
         window.open($(this).find('img').attr('src'));
     });
 
-
+    //Highlights the font in pink when hovered over
     function highlight() {
         $(this).css('color', 'pink');
     }
 
-    // Attach hover event handler to odd rows
     $(".table tr:odd").hover(highlight, function () {
-        $(this).css('color', ''); // Reset color on mouseout
+        $(this).css('color', '');
     });
 }
-
-
 
 document.getElementById('btnAdd1').addEventListener('click', function () {
     addRow(0, this);
@@ -96,78 +81,3 @@ document.getElementById('btnAdd4').addEventListener('click', function () {
 document.getElementById('btnAdd5').addEventListener('click', function () {
     addRow(4, this);
 });
-
-
-
-
-
-/*
-function addRow() {
-    // Get the table element by ID
-    var table = document.getElementById('project-area').querySelector('.table');
-
-    // Create a new row
-    var row = document.createElement('tr');
-    row.classList.add('table-row');
-
-    // Add cells to the row with unique data
-    var idCell = document.createElement('td');
-    idCell.textContent = 'ID ' + (table.rows.length + 1);
-    row.appendChild(idCell);
-
-    var nameCell = document.createElement('td');
-    nameCell.textContent = 'Project Name ' + (table.rows.length + 1);
-    row.appendChild(nameCell);
-
-    var descCell = document.createElement('td');
-    descCell.textContent = 'Project Description ' + (table.rows.length + 1);
-    row.appendChild(descCell);
-
-    var imgCell = document.createElement('td');
-    imgCell.innerHTML = '<img src="image_url_' + (table.rows.length + 1) + '" class="table-image">';
-    row.appendChild(imgCell);
-
-    // Append the row to the table
-    table.appendChild(row);
-
-    // Add click event listener to the image for opening in a new tab
-    row.querySelector('.table-image').addEventListener('click', function () {
-        window.open(this.src, '_blank');
-    });
-
-    // Add hover event listeners for changing font color
-    row.addEventListener('mouseover', function () {
-        this.style.color = 'pink';
-    });
-    row.addEventListener('mouseout', function () {
-        this.style.color = 'black';
-    });
-
-    // Disable the button that was clicked
-    this.disabled = true;
-}
-
-// Add click event listeners to each button
-document.getElementById('btnAdd1').addEventListener('click', addRow);
-document.getElementById('btnAdd2').addEventListener('click', addRow);
-document.getElementById('btnAdd3').addEventListener('click', addRow);
-document.getElementById('btnAdd4').addEventListener('click', addRow);
-document.getElementById('btnAdd5').addEventListener('click', addRow);
-
-$(imgCell).on('click', function () {
-    window.open($(this).find('img').attr('src'), '_blank');
-});
-
-// Add hover event listeners for changing font color
-row.addEventListener('mouseover', function () {
-    if (this.rowIndex % 2 === 0) {
-        this.style.color = 'pink';
-    }
-});
-row.addEventListener('mouseout', function () {
-    if (this.rowIndex % 2 === 0) {
-        this.style.color = 'black';
-    }
-});
-
-*/

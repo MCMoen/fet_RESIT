@@ -1,5 +1,3 @@
-//about me agfe 
-
 let aboutMe = [
     "ABOUT ME",
     "I DELIVER PROJECTS HALF DONE!",
@@ -13,7 +11,6 @@ let aboutComp = [
     "I work alone!"
 ]
 
-
 let myValues = [
     "MY VALUES",
     "I might have values..."
@@ -24,7 +21,6 @@ let valueSlide = [
     "We don't like you!",
     "The Berlin wall had more integrity than us"
 ]
-
 
 $(document).ready(function append() {
     $("#about-us .into-title").text(aboutMe[0]);
